@@ -1,0 +1,213 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Luxury Islamic Wedding Theme */
+  --background: oklch(0.975 0.005 85); /* Ivory/Cream #FAF6EE */
+  --foreground: oklch(0.25 0.05 160); /* Deep emerald text */
+  --card: oklch(0.98 0.003 85); /* Lighter cream for cards */
+  --card-foreground: oklch(0.25 0.05 160);
+  --popover: oklch(0.98 0.003 85);
+  --popover-foreground: oklch(0.25 0.05 160);
+  --primary: oklch(0.35 0.08 160); /* Deep Emerald #0D4C3A */
+  --primary-foreground: oklch(0.975 0.005 85);
+  --secondary: oklch(0.72 0.12 85); /* Warm Gold #C9A84C */
+  --secondary-foreground: oklch(0.25 0.05 160);
+  --muted: oklch(0.92 0.01 85);
+  --muted-foreground: oklch(0.45 0.03 160);
+  --accent: oklch(0.72 0.12 85); /* Gold accent */
+  --accent-foreground: oklch(0.25 0.05 160);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.82 0.08 85); /* Gold-tinted border */
+  --input: oklch(0.92 0.02 85);
+  --ring: oklch(0.72 0.12 85); /* Gold ring */
+  --chart-1: oklch(0.35 0.08 160);
+  --chart-2: oklch(0.72 0.12 85);
+  --chart-3: oklch(0.65 0.08 30);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.5rem;
+  
+  /* Custom Wedding Theme Colors */
+  --emerald: oklch(0.35 0.08 160);
+  --emerald-light: oklch(0.45 0.06 160);
+  --gold: oklch(0.72 0.12 85);
+  --gold-light: oklch(0.82 0.10 85);
+  --cream: oklch(0.975 0.005 85);
+  --cream-dark: oklch(0.92 0.01 85);
+  --rose-gold: oklch(0.75 0.08 30);
+}
+
+@theme inline {
+  --font-sans: 'Lato', 'Lato Fallback', sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-display: 'Cinzel', 'Cormorant Garamond', serif;
+  --font-arabic: 'Scheherazade New', 'Noto Nastaliq Urdu', serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-emerald: var(--emerald);
+  --color-emerald-light: var(--emerald-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-cream: var(--cream);
+  --color-cream-dark: var(--cream-dark);
+  --color-rose-gold: var(--rose-gold);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Gold shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--gold) 0%,
+    var(--gold-light) 25%,
+    oklch(0.9 0.08 85) 50%,
+    var(--gold-light) 75%,
+    var(--gold) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Pulse glow for gold elements */
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px var(--gold));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px var(--gold));
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--emerald);
+}
+
+/* Arabic text styling */
+.arabic-text {
+  font-family: 'Scheherazade New', 'Noto Nastaliq Urdu', serif;
+  direction: rtl;
+  line-height: 2;
+}
+
+/* Islamic geometric pattern background */
+.islamic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.08'%3E%3Cpath d='M30 0L60 30L30 60L0 30z M30 10L50 30L30 50L10 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Arabesque pattern */
+.arabesque-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230D4C3A' fill-opacity='0.05'%3E%3Cpath d='M40 0c22.1 0 40 17.9 40 40S62.1 80 40 80 0 62.1 0 40 17.9 0 40 0zm0 10c-16.6 0-30 13.4-30 30s13.4 30 30 30 30-13.4 30-30-13.4-30-30-30zm0 10c11 0 20 9 20 20s-9 20-20 20-20-9-20-20 9-20 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
