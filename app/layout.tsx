@@ -28,10 +28,10 @@ const scheherazade = Scheherazade_New({
 });
 
 export const metadata: Metadata = {
-  title: 'Ahmad & Fatimah | Wedding Invitation',
-  description: 'You are cordially invited to celebrate the Nikah of Ahmad & Fatimah. Join us for this blessed union.',
+  title: 'Anziya & Ramees Mohammed | Wedding Invitation',
+  description: 'You are cordially invited to the Marriage Reception of Anziya. A & Ramees Mohammed. A on Sunday, July 12th, 2026 at KMR Convention Center, Thenkurussi.',
   generator: 'v0.app',
-  keywords: ['wedding', 'nikah', 'muslim wedding', 'invitation'],
+  keywords: ['wedding', 'nikah', 'muslim wedding', 'invitation', 'marriage reception', 'Anziya', 'Ramees Mohammed'],
   icons: {
     icon: [
       {

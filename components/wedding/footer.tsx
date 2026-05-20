@@ -5,27 +5,40 @@ import { CrescentMoon } from './islamic-patterns'
 
 export function Footer() {
   return (
-    <footer className="relative py-16 px-4 bg-primary text-primary-foreground overflow-hidden">
-      {/* Background pattern */}
+    <footer className="relative py-20 px-4 bg-primary text-primary-foreground overflow-hidden">
+      {/* Animated background pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="islamic-pattern w-full h-full" />
+        <motion.div
+          className="w-full h-full"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='none' stroke='%23C9A84C' stroke-width='0.5'/%3E%3C/svg%3E")`,
+            backgroundSize: '40px 40px',
+          }}
+          animate={{ backgroundPosition: ['0px 0px', '40px 40px'] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Bismillah */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="mb-8"
         >
-          <p className="arabic-text text-2xl md:text-3xl opacity-80" style={{ fontFamily: 'var(--font-arabic)' }}>
+          <motion.p 
+            className="arabic-text text-2xl md:text-4xl opacity-80" 
+            style={{ fontFamily: 'var(--font-arabic)' }}
+            animate={{ opacity: [0.6, 0.9, 0.6] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
             بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
-          </p>
+          </motion.p>
         </motion.div>
 
-        {/* Couple monogram */}
+        {/* Couple monogram with animation */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -33,13 +46,17 @@ export function Footer() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-8"
         >
-          <div className="inline-flex items-center justify-center w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-secondary bg-secondary/10">
+          <motion.div 
+            className="inline-flex items-center justify-center w-28 h-28 md:w-36 md:h-36 rounded-full border-2 border-secondary bg-secondary/10"
+            animate={{ boxShadow: ['0 0 0px rgba(201, 168, 76, 0)', '0 0 30px rgba(201, 168, 76, 0.3)', '0 0 0px rgba(201, 168, 76, 0)'] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
             <div className="text-center">
-              <span className="text-3xl md:text-4xl font-display text-secondary">A</span>
-              <span className="text-xl md:text-2xl font-display text-secondary/70 mx-1">&</span>
-              <span className="text-3xl md:text-4xl font-display text-secondary">F</span>
+              <span className="text-4xl md:text-5xl font-display text-secondary">A</span>
+              <span className="text-2xl md:text-3xl font-display text-secondary/70 mx-2">&</span>
+              <span className="text-4xl md:text-5xl font-display text-secondary">R</span>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Names */}
@@ -48,9 +65,9 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-2xl md:text-3xl font-display mb-4"
+          className="text-2xl md:text-4xl font-display mb-4"
         >
-          Ahmad & Fatimah
+          Anziya & Ramees
         </motion.h3>
 
         {/* Date and venue */}
@@ -61,29 +78,61 @@ export function Footer() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-8"
         >
-          <p className="font-serif text-lg opacity-80">August 15, 2026 • Grand Mosque Hall</p>
+          <p className="font-serif text-lg md:text-xl opacity-80">July 12, 2026 | KMR Convention Center, Thenkurussi</p>
         </motion.div>
 
         {/* Divider with crescent */}
-        <div className="flex items-center justify-center gap-4 mb-8">
-          <div className="w-16 h-px bg-gradient-to-r from-transparent to-secondary/50" />
-          <CrescentMoon className="w-6 h-6 text-secondary" />
-          <div className="w-16 h-px bg-gradient-to-l from-transparent to-secondary/50" />
-        </div>
+        <motion.div 
+          className="flex items-center justify-center gap-4 mb-8"
+          initial={{ opacity: 0, scaleX: 0 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <div className="w-20 h-px bg-gradient-to-r from-transparent to-secondary/50" />
+          <motion.div
+            animate={{ rotate: [0, 10, -10, 0] }}
+            transition={{ duration: 4, repeat: Infinity }}
+          >
+            <CrescentMoon className="w-8 h-8 text-secondary" />
+          </motion.div>
+          <div className="w-20 h-px bg-gradient-to-l from-transparent to-secondary/50" />
+        </motion.div>
 
         {/* Dua */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mb-10"
+        >
+          <motion.p 
+            className="arabic-text text-xl md:text-2xl opacity-70 mb-3" 
+            style={{ fontFamily: 'var(--font-arabic)' }}
+            animate={{ opacity: [0.5, 0.8, 0.5] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
+            بارك الله لكما وبارك عليكما وجمع بينكما في خير
+          </motion.p>
+          <p className="font-serif text-sm md:text-base opacity-60 italic max-w-lg mx-auto leading-relaxed">
+            May Allah bless you both and bestow His blessings upon you and bring you together in goodness
+          </p>
+        </motion.div>
+
+        {/* JazakAllah */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
           className="mb-8"
         >
-          <p className="arabic-text text-xl opacity-70 mb-2" style={{ fontFamily: 'var(--font-arabic)' }}>
-            بارك الله لكما وبارك عليكما وجمع بينكما في خير
+          <p className="arabic-text text-xl text-secondary" style={{ fontFamily: 'var(--font-arabic)' }}>
+            جزاك الله خيرا
           </p>
-          <p className="font-serif text-sm opacity-60 italic">
-            May Allah bless you both and bestow His blessings upon you and bring you together in goodness
+          <p className="text-sm font-serif opacity-60 italic mt-1">
+            JazakAllah Khair for celebrating with us
           </p>
         </motion.div>
 
@@ -92,8 +141,8 @@ export function Footer() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-sm opacity-50"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-xs md:text-sm opacity-40"
         >
           Made with love for our special day
         </motion.p>

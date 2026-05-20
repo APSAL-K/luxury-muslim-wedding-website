@@ -28,8 +28,8 @@ export function Navigation() {
 
   const handleShare = async () => {
     const shareData = {
-      title: 'Ahmad & Fatimah Wedding Invitation',
-      text: 'You are cordially invited to celebrate the Nikah of Ahmad & Fatimah!',
+      title: 'Anziya & Ramees Wedding Invitation',
+      text: 'You are cordially invited to the Marriage Reception of Anziya & Ramees Mohammed! Join us on July 12th, 2026 at KMR Convention Center, Thenkurussi.',
       url: window.location.href,
     }
 
@@ -61,7 +61,7 @@ export function Navigation() {
             {/* Logo/Monogram */}
             <a href="#" className="flex items-center gap-2">
               <div className="w-10 h-10 rounded-full border-2 border-secondary flex items-center justify-center bg-background/50">
-                <span className="font-display text-secondary text-sm">A&F</span>
+                <span className="font-display text-secondary text-sm">A&R</span>
               </div>
             </a>
 
@@ -151,7 +151,7 @@ export function Navigation() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 2, type: 'spring' }}
-        href={`https://wa.me/?text=${encodeURIComponent('You are cordially invited to the Nikah of Ahmad & Fatimah! ' + (typeof window !== 'undefined' ? window.location.href : ''))}`}
+        href={`https://wa.me/?text=${encodeURIComponent('You are cordially invited to the Marriage Reception of Anziya & Ramees Mohammed! Join us on July 12th, 2026 at KMR Convention Center, Thenkurussi. ' + (typeof window !== 'undefined' ? window.location.href : ''))}`}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 md:hidden w-14 h-14 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full flex items-center justify-center shadow-lg transition-colors"

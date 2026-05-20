@@ -1,164 +1,201 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { MapPin, Clock, Calendar, ExternalLink } from 'lucide-react'
+import { MapPin, Clock, Calendar, ExternalLink, Navigation } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { GeometricBorder } from './islamic-patterns'
 
-interface EventCardProps {
-  title: string
-  arabicTitle: string
-  date: string
-  time: string
-  venue: string
-  address: string
-  mapLink: string
-  delay?: number
-}
-
-function EventCard({ title, arabicTitle, date, time, venue, address, mapLink, delay = 0 }: EventCardProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay }}
-      className="group"
-    >
-      <div className="relative bg-card border-2 border-secondary/30 rounded-lg p-6 md:p-8 hover:border-secondary transition-colors duration-300 overflow-hidden">
-        <GeometricBorder className="opacity-30 group-hover:opacity-50 transition-opacity" />
-        
-        {/* Card content */}
-        <div className="relative z-10">
-          {/* Header */}
-          <div className="text-center mb-6">
-            <p className="arabic-text text-xl text-secondary mb-1" style={{ fontFamily: 'var(--font-arabic)' }}>
-              {arabicTitle}
-            </p>
-            <h3 className="text-2xl md:text-3xl font-display text-primary">{title}</h3>
-          </div>
-
-          {/* Details */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3 text-primary/80">
-              <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
-                <Calendar className="w-5 h-5 text-secondary" />
-              </div>
-              <div>
-                <p className="text-sm text-primary/60">Date</p>
-                <p className="font-serif">{date}</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 text-primary/80">
-              <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
-                <Clock className="w-5 h-5 text-secondary" />
-              </div>
-              <div>
-                <p className="text-sm text-primary/60">Time</p>
-                <p className="font-serif">{time}</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3 text-primary/80">
-              <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
-                <MapPin className="w-5 h-5 text-secondary" />
-              </div>
-              <div>
-                <p className="text-sm text-primary/60">Venue</p>
-                <p className="font-serif font-semibold">{venue}</p>
-                <p className="text-sm text-primary/60">{address}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Map button */}
-          <div className="mt-6 text-center">
-            <Button
-              asChild
-              variant="outline"
-              className="border-secondary text-secondary hover:bg-secondary hover:text-primary-foreground group/btn"
-            >
-              <a href={mapLink} target="_blank" rel="noopener noreferrer">
-                <span>View on Map</span>
-                <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-0.5 transition-transform" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  )
-}
-
 export function EventsSection() {
-  const events = [
-    {
-      title: 'Mehndi Ceremony',
-      arabicTitle: 'مہندی',
-      date: 'Thursday, August 13th, 2026',
-      time: '6:00 PM onwards',
-      venue: 'Rose Garden Banquet',
-      address: '456 Garden Avenue, City Center',
-      mapLink: 'https://maps.google.com/?q=Rose+Garden+Banquet',
-    },
-    {
-      title: 'Nikah Ceremony',
-      arabicTitle: 'نکاح',
-      date: 'Saturday, August 15th, 2026',
-      time: '4:00 PM',
-      venue: 'Grand Mosque Hall',
-      address: '123 Masjid Street, Downtown',
-      mapLink: 'https://maps.google.com/?q=Grand+Mosque+Hall',
-    },
-    {
-      title: 'Walima Reception',
-      arabicTitle: 'ولیمہ',
-      date: 'Sunday, August 16th, 2026',
-      time: '7:00 PM onwards',
-      venue: 'Crystal Palace Ballroom',
-      address: '789 Royal Boulevard, Uptown',
-      mapLink: 'https://maps.google.com/?q=Crystal+Palace+Ballroom',
-    },
-  ]
-
   return (
-    <section className="relative py-24 px-4 bg-gradient-to-b from-background to-primary/5" id="events">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative py-24 px-4 bg-gradient-to-b from-background to-primary/5 overflow-hidden" id="events">
+      {/* Animated background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <motion.div
+          className="w-full h-full"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%230D4C3A' stroke-width='1'/%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px',
+          }}
+          animate={{ backgroundPosition: ['0px 0px', '60px 60px'] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+      </div>
+
+      <div className="max-w-5xl mx-auto relative z-10">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="arabic-text text-2xl text-secondary mb-2" style={{ fontFamily: 'var(--font-arabic)' }}>
+          <motion.p 
+            className="arabic-text text-2xl md:text-3xl text-secondary mb-3" 
+            style={{ fontFamily: 'var(--font-arabic)' }}
+            animate={{ opacity: [0.7, 1, 0.7] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
             تفصیلات تقریب
-          </p>
-          <h2 className="text-4xl md:text-5xl font-display text-primary mb-4">Wedding Events</h2>
-          <p className="text-lg font-serif text-primary/70 max-w-xl mx-auto">
-            Join us in celebrating these blessed occasions as two families become one
+          </motion.p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-primary mb-4">Event Details</h2>
+          <p className="text-lg md:text-xl font-serif text-primary/70 max-w-xl mx-auto">
+            Join us in celebrating this blessed occasion
           </p>
         </motion.div>
 
-        {/* Event cards */}
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {events.map((event, index) => (
-            <EventCard key={event.title} {...event} delay={index * 0.2} />
-          ))}
-        </div>
+        {/* Main Event Card - Marriage Reception */}
+        <motion.div
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="group"
+        >
+          <div className="relative bg-card border-2 border-secondary/40 rounded-2xl p-8 md:p-12 hover:border-secondary transition-all duration-500 overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-secondary/10">
+            <GeometricBorder className="opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
+            
+            {/* Animated corner accents */}
+            <motion.div 
+              className="absolute top-0 left-0 w-20 h-20 border-l-4 border-t-4 border-secondary/50 rounded-tl-2xl"
+              animate={{ opacity: [0.5, 0.8, 0.5] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+            <motion.div 
+              className="absolute bottom-0 right-0 w-20 h-20 border-r-4 border-b-4 border-secondary/50 rounded-br-2xl"
+              animate={{ opacity: [0.5, 0.8, 0.5] }}
+              transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+            />
+            
+            {/* Card content */}
+            <div className="relative z-10">
+              {/* Header */}
+              <div className="text-center mb-10">
+                <motion.p 
+                  className="arabic-text text-2xl md:text-3xl text-secondary mb-2" 
+                  style={{ fontFamily: 'var(--font-arabic)' }}
+                  animate={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                >
+                  نکاح
+                </motion.p>
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-display gold-shimmer">Marriage Reception</h3>
+              </div>
 
-        {/* Dress code note */}
+              {/* Event details grid */}
+              <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-10">
+                {/* Date */}
+                <motion.div 
+                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <motion.div 
+                    className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-4 border-2 border-secondary/30"
+                    animate={{ boxShadow: ['0 0 0px rgba(201, 168, 76, 0)', '0 0 20px rgba(201, 168, 76, 0.3)', '0 0 0px rgba(201, 168, 76, 0)'] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <Calendar className="w-10 h-10 md:w-12 md:h-12 text-secondary" />
+                  </motion.div>
+                  <p className="text-sm text-primary/60 font-serif mb-1">On Sunday</p>
+                  <p className="text-3xl md:text-4xl font-display text-primary">12th</p>
+                  <p className="text-xl md:text-2xl font-display text-secondary">July 2026</p>
+                  <p className="text-sm text-primary/60 font-serif mt-2 italic">(Hijra 1448, Muharam 26)</p>
+                </motion.div>
+
+                {/* Venue */}
+                <motion.div 
+                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <motion.div 
+                    className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-4 border-2 border-secondary/30"
+                    animate={{ boxShadow: ['0 0 0px rgba(201, 168, 76, 0)', '0 0 20px rgba(201, 168, 76, 0.3)', '0 0 0px rgba(201, 168, 76, 0)'] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0.7 }}
+                  >
+                    <MapPin className="w-10 h-10 md:w-12 md:h-12 text-secondary" />
+                  </motion.div>
+                  <p className="text-sm text-primary/60 font-serif mb-1">Venue</p>
+                  <p className="text-2xl md:text-3xl font-display text-primary">KMR</p>
+                  <p className="text-xl md:text-2xl font-display text-secondary">Convention Center</p>
+                  <p className="text-base text-primary/70 font-serif mt-2">Thenkurussi</p>
+                </motion.div>
+
+                {/* Time */}
+                <motion.div 
+                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <motion.div 
+                    className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-4 border-2 border-secondary/30"
+                    animate={{ boxShadow: ['0 0 0px rgba(201, 168, 76, 0)', '0 0 20px rgba(201, 168, 76, 0.3)', '0 0 0px rgba(201, 168, 76, 0)'] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 1.4 }}
+                  >
+                    <Clock className="w-10 h-10 md:w-12 md:h-12 text-secondary" />
+                  </motion.div>
+                  <p className="text-sm text-primary/60 font-serif mb-1">Between</p>
+                  <p className="text-2xl md:text-3xl font-display text-primary">11:00 AM</p>
+                  <p className="text-lg text-primary/60">to</p>
+                  <p className="text-2xl md:text-3xl font-display text-secondary">2:00 PM</p>
+                </motion.div>
+              </div>
+
+              {/* Map button */}
+              <div className="text-center">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-serif text-lg px-10 py-6 group/btn relative overflow-hidden rounded-full"
+                >
+                  <a 
+                    href="https://maps.google.com/?q=KMR+Convention+Center+Thenkurussi" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <span className="relative z-10 flex items-center gap-3">
+                      <Navigation className="w-5 h-5" />
+                      <span>Get Directions</span>
+                      <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </span>
+                    {/* Shimmer effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Sharing happiness note */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-12 text-center"
         >
+          <motion.div
+            className="inline-block p-6 rounded-xl bg-primary/5 border border-secondary/20"
+            animate={{ boxShadow: ['0 0 0px rgba(201, 168, 76, 0)', '0 0 15px rgba(201, 168, 76, 0.1)', '0 0 0px rgba(201, 168, 76, 0)'] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
+            <p className="text-lg md:text-xl font-display text-secondary mb-2">Sharing the happiness:</p>
+            <p className="text-xl md:text-2xl font-serif text-primary">Family & Friends</p>
+          </motion.div>
+        </motion.div>
+
+        {/* Contact info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-8 text-center"
+        >
           <p className="text-base font-serif text-primary/70">
-            <span className="text-secondary font-semibold">Dress Code:</span> Traditional/Formal Attire
+            For inquiries, contact: <span className="text-secondary font-medium">7736750501</span>
           </p>
         </motion.div>
       </div>
