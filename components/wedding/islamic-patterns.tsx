@@ -1,8 +1,31 @@
 "use client"
 
 import { motion } from 'framer-motion'
+import { useState, useEffect, useMemo } from 'react'
+
+// Pre-defined positions to avoid hydration mismatch
+const PETAL_POSITIONS = [
+  { top: 15, xMid: 12, xEnd: -30, duration: 12 },
+  { top: 35, xMid: -18, xEnd: 45, duration: 14 },
+  { top: 55, xMid: 25, xEnd: -20, duration: 11 },
+  { top: 25, xMid: -30, xEnd: 35, duration: 13 },
+  { top: 70, xMid: 20, xEnd: -15, duration: 15 },
+  { top: 45, xMid: -25, xEnd: 40, duration: 12 },
+  { top: 80, xMid: 15, xEnd: -35, duration: 14 },
+  { top: 10, xMid: -20, xEnd: 25, duration: 13 },
+]
 
 export function IslamicPatterns() {
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (!isMounted) {
+    return null
+  }
+
   return (
     <>
       {/* Floating Lanterns */}
@@ -73,22 +96,22 @@ export function IslamicPatterns() {
 
       {/* Floating Rose Petals */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        {[...Array(8)].map((_, i) => (
+        {PETAL_POSITIONS.map((petal, i) => (
           <motion.div
             key={i}
             className="absolute w-4 h-4 opacity-30"
             style={{
               left: `${10 + i * 12}%`,
-              top: `${Math.random() * 100}%`,
+              top: `${petal.top}%`,
             }}
             animate={{
               y: [0, 100, 200],
-              x: [0, Math.random() * 50 - 25, Math.random() * 100 - 50],
+              x: [0, petal.xMid, petal.xEnd],
               rotate: [0, 180, 360],
               opacity: [0.3, 0.5, 0],
             }}
             transition={{
-              duration: 10 + Math.random() * 5,
+              duration: petal.duration,
               repeat: Infinity,
               ease: "easeInOut",
               delay: i * 1.5,
