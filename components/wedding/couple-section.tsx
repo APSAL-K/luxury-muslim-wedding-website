@@ -56,37 +56,33 @@ export function CoupleSection() {
             className="text-center"
           >
             <div className="relative inline-block mb-8">
-              {/* Photo placeholder with decorative frame */}
+              {/* Photo with decorative frame */}
               <motion.div 
-                className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-secondary shadow-2xl mx-auto bg-gradient-to-br from-secondary/20 to-primary/10 flex items-center justify-center"
+                className="w-44 h-44 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl mx-auto"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="text-center p-4">
-                  <p className="text-secondary/60 font-serif text-sm md:text-base">Bride Photo</p>
-                  <p className="text-secondary/40 font-serif text-xs mt-1">Coming Soon</p>
-                </div>
+                <img 
+                  src="/images/bride.jpg" 
+                  alt="Anziya - The Bride" 
+                  className="w-full h-full object-cover grayscale"
+                />
               </motion.div>
               {/* Decorative rings */}
               <motion.div 
-                className="absolute -inset-3 border-2 border-secondary/30 rounded-full pointer-events-none"
+                className="absolute -inset-2 border-2 border-primary/20 rounded-full pointer-events-none"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
               />
               <motion.div 
-                className="absolute -inset-5 border border-secondary/20 rounded-full pointer-events-none"
+                className="absolute -inset-4 border border-primary/15 rounded-full pointer-events-none"
                 animate={{ rotate: -360 }}
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div 
-                className="absolute -inset-7 border border-dashed border-secondary/10 rounded-full pointer-events-none"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
               />
             </div>
             
             <motion.h3 
-              className="text-3xl md:text-4xl lg:text-5xl font-display gold-shimmer mb-3"
+              className="text-2xl md:text-3xl lg:text-4xl font-display text-primary mb-2"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -95,7 +91,7 @@ export function CoupleSection() {
               Anziya. A
             </motion.h3>
             <motion.p 
-              className="text-lg md:text-xl font-serif text-secondary mb-4"
+              className="text-base md:text-lg font-serif text-primary/60 mb-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -112,12 +108,12 @@ export function CoupleSection() {
               transition={{ delay: 0.4 }}
             >
               <p className="text-sm md:text-base font-serif text-primary/70">Daughter of</p>
-              <p className="text-lg md:text-xl font-serif text-primary font-medium">Mr. Abdul Jaleel. A & Mrs. Soujath. K</p>
-              <p className="text-sm text-primary/60">Anakkode House, Kuzhalmannam, Palakkad</p>
-              <div className="pt-4 border-t border-secondary/20 mt-4">
-                <p className="text-xs md:text-sm font-serif text-primary/50 italic">Grand D/o</p>
-                <p className="text-sm md:text-base font-serif text-primary/70">Late. Alu Rawther & Mrs. Sulekha</p>
-                <p className="text-sm md:text-base font-serif text-primary/70">and Late Kabeer & Mrs. Noorjahan</p>
+              <p className="text-base md:text-lg font-serif text-primary font-medium">Mr. Abdul Jaleel. A & Mrs. Soujath. K</p>
+              <p className="text-xs md:text-sm text-primary/60">Anakkode House, Kuzhalmannam, Palakkad</p>
+              <div className="pt-3 border-t border-primary/10 mt-3">
+                <p className="text-xs font-serif text-primary/50 italic">Grand D/o</p>
+                <p className="text-xs md:text-sm font-serif text-primary/70">Late. Alu Rawther & Mrs. Sulekha</p>
+                <p className="text-xs md:text-sm font-serif text-primary/70">and Late Kabeer & Mrs. Noorjahan</p>
               </div>
             </motion.div>
           </motion.div>

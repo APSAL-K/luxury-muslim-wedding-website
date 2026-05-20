@@ -34,23 +34,13 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-[100] flex items-center justify-center overflow-auto py-6 bg-background"
         >
-          {/* Animated gradient background */}
-          <motion.div 
-            className="absolute inset-0"
-            animate={{
-              background: [
-                'radial-gradient(ellipse at center, rgba(13, 76, 58, 0.3) 0%, rgba(250, 246, 238, 1) 70%)',
-                'radial-gradient(ellipse at center, rgba(201, 168, 76, 0.2) 0%, rgba(250, 246, 238, 1) 70%)',
-                'radial-gradient(ellipse at center, rgba(13, 76, 58, 0.3) 0%, rgba(250, 246, 238, 1) 70%)',
-              ]
-            }}
-            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-          />
+          {/* Clean cream background */}
+          <div className="absolute inset-0 bg-background" />
           
-          {/* Islamic pattern overlay */}
-          <div className="absolute inset-0 islamic-pattern opacity-30" />
+          {/* Subtle Islamic pattern overlay */}
+          <div className="absolute inset-0 islamic-pattern opacity-15" />
           
           {/* Animated envelope/door effect */}
           <motion.div
@@ -62,7 +52,7 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
             className="absolute inset-0 bg-gradient-to-b from-emerald/10 to-transparent"
           />
 
-          {/* Floating lanterns */}
+          {/* Floating lanterns - using emerald color */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {[0, 1, 2, 3, 4, 5].map((i) => (
               <motion.div
@@ -74,7 +64,7 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
                 }}
                 animate={{ 
                   y: "-20vh",
-                  opacity: [0, 0.7, 0.7, 0]
+                  opacity: [0, 0.5, 0.5, 0]
                 }}
                 transition={{
                   duration: 10 + i * 2,
@@ -94,7 +84,7 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
             {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => (
               <motion.div
                 key={`sparkle-${i}`}
-                className="absolute w-1 h-1 bg-secondary rounded-full"
+                className="absolute w-1 h-1 bg-primary/30 rounded-full"
                 style={{
                   left: `${5 + i * 6}%`,
                   top: `${10 + (i % 5) * 20}%`,
@@ -113,39 +103,39 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
             ))}
           </div>
 
-          {/* Main content card */}
+          {/* Main content card - properly sized for web and mobile */}
           {showContent && (
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 1.2, y: -50 }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="relative z-10 w-[92vw] max-w-lg mx-4"
+              className="relative z-10 w-full max-w-sm mx-4 md:max-w-lg lg:max-w-xl"
             >
               {/* Decorative frame */}
-              <div className="relative bg-background/98 backdrop-blur-md border-2 border-secondary/40 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative bg-background border-2 border-primary/20 rounded-2xl overflow-visible shadow-lg">
                 {/* Animated top border */}
                 <motion.div 
-                  className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent"
+                  className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/40 to-transparent"
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
                 
                 {/* Ornate corner decorations */}
-                <div className="absolute top-3 left-3 w-16 h-16">
+                <div className="absolute top-2 left-2 w-10 h-10 md:w-12 md:h-12">
                   <CornerOrnament />
                 </div>
-                <div className="absolute top-3 right-3 w-16 h-16 transform scale-x-[-1]">
+                <div className="absolute top-2 right-2 w-10 h-10 md:w-12 md:h-12 transform scale-x-[-1]">
                   <CornerOrnament />
                 </div>
-                <div className="absolute bottom-3 left-3 w-16 h-16 transform scale-y-[-1]">
+                <div className="absolute bottom-2 left-2 w-10 h-10 md:w-12 md:h-12 transform scale-y-[-1]">
                   <CornerOrnament />
                 </div>
-                <div className="absolute bottom-3 right-3 w-16 h-16 transform scale-[-1]">
+                <div className="absolute bottom-2 right-2 w-10 h-10 md:w-12 md:h-12 transform scale-[-1]">
                   <CornerOrnament />
                 </div>
                 
-                <div className="px-6 py-10 md:px-10 md:py-14 text-center">
+                <div className="px-5 py-6 md:px-10 md:py-10 text-center">
                   {/* Bismillah with animation */}
                   <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -153,12 +143,12 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
                     transition={{ delay: 0.3, duration: 0.8 }}
                   >
                     <p 
-                      className="text-2xl md:text-4xl text-primary mb-2 leading-relaxed"
+                      className="text-lg md:text-2xl lg:text-3xl text-primary mb-1 leading-relaxed"
                       style={{ fontFamily: 'var(--font-arabic)' }}
                     >
                       بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
                     </p>
-                    <p className="text-xs md:text-sm text-primary/60 font-serif italic mb-6">
+                    <p className="text-xs text-primary/60 font-serif italic mb-4">
                       In the name of Allah, the Most Gracious, the Most Merciful
                     </p>
                   </motion.div>
@@ -168,13 +158,13 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
                     initial={{ opacity: 0, scale: 0, rotate: -180 }}
                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
                     transition={{ delay: 0.5, duration: 1, type: "spring" }}
-                    className="flex justify-center mb-6"
+                    className="flex justify-center mb-4"
                   >
                     <div className="relative">
-                      <CrescentMoon className="w-16 h-16 md:w-20 md:h-20" />
+                      <CrescentMoon className="w-10 h-10 md:w-14 md:h-14" />
                       <motion.div
-                        className="absolute inset-0 bg-secondary/30 rounded-full blur-xl"
-                        animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] }}
+                        className="absolute inset-0 bg-primary/20 rounded-full blur-xl"
+                        animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       />
                     </div>
@@ -186,13 +176,13 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.7, duration: 0.8 }}
                   >
-                    <p className="text-sm md:text-base font-serif text-primary/70 mb-2">
+                    <p className="text-xs md:text-sm font-serif text-primary/80 mb-1">
                       Mr. Abdul Jaleel. A & Mrs. Soujath. K
                     </p>
-                    <p className="text-xs md:text-sm font-serif text-primary/50 mb-4">
+                    <p className="text-xs text-primary/50 mb-2">
                       Cordially invite your esteemed presence
                     </p>
-                    <p className="text-sm md:text-base font-serif text-primary/70 mb-1">
+                    <p className="text-xs md:text-sm font-serif text-primary/70">
                       to the Marriage Reception of their daughter
                     </p>
                   </motion.div>
@@ -203,7 +193,7 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.9, duration: 0.8, type: "spring" }}
                   >
-                    <h1 className="text-4xl md:text-6xl font-display gold-shimmer mb-3 tracking-wide">
+                    <h1 className="text-2xl md:text-4xl lg:text-5xl font-display text-primary my-2 tracking-wide">
                       Anziya. A
                     </h1>
                   </motion.div>
@@ -212,7 +202,7 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.1 }}
-                    className="text-xl md:text-2xl text-secondary/80 font-serif italic my-3"
+                    className="text-base md:text-lg text-primary/60 font-serif italic"
                   >
                     with
                   </motion.p>
@@ -223,7 +213,7 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1.2, duration: 0.8, type: "spring" }}
                   >
-                    <h1 className="text-4xl md:text-6xl font-display gold-shimmer mb-4 tracking-wide">
+                    <h1 className="text-2xl md:text-4xl lg:text-5xl font-display text-primary my-2 tracking-wide">
                       Ramees Mohammed. A
                     </h1>
                   </motion.div>
@@ -241,12 +231,12 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.5 }}
-                    className="mt-4 mb-8"
+                    className="mt-2 mb-5"
                   >
-                    <p className="text-lg md:text-xl font-display text-secondary">
+                    <p className="text-sm md:text-base font-display text-primary">
                       Sunday, July 12th, 2026
                     </p>
-                    <p className="text-sm text-primary/60 font-serif mt-1">
+                    <p className="text-xs text-primary/60 font-serif mt-0.5">
                       Hijra 1448, Muharam 26
                     </p>
                   </motion.div>
@@ -258,18 +248,18 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
                     transition={{ delay: 1.7 }}
                     onClick={handleOpenInvitation}
                     disabled={isAnimating}
-                    className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 md:px-12 md:py-6 bg-gradient-to-r from-emerald to-emerald-dark text-ivory font-serif text-base md:text-lg rounded-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-emerald/40 disabled:opacity-70 transform hover:scale-105"
+                    className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-primary text-background font-serif text-sm md:text-base rounded-full overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-primary/30 disabled:opacity-70 transform hover:scale-105"
                   >
                     {/* Animated background glow */}
                     <motion.span 
-                      className="absolute inset-0 bg-gradient-to-r from-secondary/30 via-secondary/10 to-secondary/30"
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-background/20 to-transparent"
                       animate={{ x: ['-100%', '100%'] }}
                       transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                     />
                     
                     {/* Envelope icon with animation */}
                     <motion.svg 
-                      className="w-6 h-6 relative z-10"
+                      className="w-4 h-4 md:w-5 md:h-5 relative z-10"
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
@@ -289,11 +279,11 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
                     
                     {/* Arrow with bounce */}
                     <motion.svg 
-                      className="w-5 h-5 relative z-10"
+                      className="w-4 h-4 md:w-5 md:h-5 relative z-10"
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
-                      animate={{ x: [0, 8, 0] }}
+                      animate={{ x: [0, 6, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -303,9 +293,9 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
                   {/* Tap hint with pulse */}
                   <motion.p
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: [0.4, 0.8, 0.4] }}
+                    animate={{ opacity: [0.3, 0.6, 0.3] }}
                     transition={{ delay: 2, duration: 2, repeat: Infinity }}
-                    className="text-xs text-primary/50 mt-5 font-serif"
+                    className="text-xs text-primary/40 mt-4 font-serif"
                   >
                     Tap to open your invitation
                   </motion.p>
@@ -313,7 +303,7 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
 
                 {/* Animated bottom border */}
                 <motion.div 
-                  className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-secondary/60 to-transparent"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/40 to-transparent"
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 1 }}
                 />
@@ -321,7 +311,7 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
             </motion.div>
           )}
 
-          {/* Rose petals falling */}
+          {/* Rose petals falling - using emerald */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => (
               <motion.div
@@ -335,7 +325,7 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
                 animate={{ 
                   y: "110vh",
                   rotate: 360,
-                  opacity: [0, 0.8, 0.8, 0]
+                  opacity: [0, 0.4, 0.4, 0]
                 }}
                 transition={{
                   duration: 7 + (i % 4),
@@ -345,7 +335,7 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
                 }}
                 className="absolute"
               >
-                <RosePetal index={i} />
+                <RosePetal />
               </motion.div>
             ))}
           </div>
@@ -357,7 +347,7 @@ export function OpeningModal({ onOpen }: OpeningModalProps) {
 
 function CornerOrnament() {
   return (
-    <svg viewBox="0 0 60 60" className="w-full h-full text-secondary/40">
+    <svg viewBox="0 0 60 60" className="w-full h-full text-primary/25">
       <path
         d="M0 0 L0 30 Q0 0 30 0 Z"
         fill="none"
@@ -377,40 +367,29 @@ function CornerOrnament() {
 
 function Lantern() {
   return (
-    <svg width="35" height="55" viewBox="0 0 35 55" className="drop-shadow-lg">
+    <svg width="28" height="44" viewBox="0 0 35 55" className="drop-shadow-lg opacity-50">
       <defs>
         <radialGradient id="lanternGlowModal" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="var(--gold)" stopOpacity="0.9" />
-          <stop offset="100%" stopColor="var(--gold)" stopOpacity="0.3" />
+          <stop offset="0%" stopColor="var(--emerald)" stopOpacity="0.5" />
+          <stop offset="100%" stopColor="var(--emerald)" stopOpacity="0.2" />
         </radialGradient>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-          <feMerge>
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
       </defs>
-      <path d="M17.5 0 Q17.5 5 14 5 L21 5 Q17.5 5 17.5 0" fill="var(--gold)" />
-      <rect x="10" y="5" width="15" height="4" rx="1" fill="var(--gold)" />
-      <path d="M10 9 Q6 27 10 45 L25 45 Q29 27 25 9 Z" fill="url(#lanternGlowModal)" stroke="var(--gold)" strokeWidth="1" filter="url(#glow)" />
-      <rect x="12" y="45" width="11" height="3" rx="1" fill="var(--gold)" />
-      <path d="M14 48 L17.5 55 L21 48 Z" fill="var(--gold)" />
-      <ellipse cx="17.5" cy="27" rx="6" ry="12" fill="var(--gold)" opacity="0.6" />
+      <path d="M17.5 0 Q17.5 5 14 5 L21 5 Q17.5 5 17.5 0" fill="var(--emerald)" />
+      <rect x="10" y="5" width="15" height="4" rx="1" fill="var(--emerald)" />
+      <path d="M10 9 Q6 27 10 45 L25 45 Q29 27 25 9 Z" fill="url(#lanternGlowModal)" stroke="var(--emerald)" strokeWidth="1" />
+      <rect x="12" y="45" width="11" height="3" rx="1" fill="var(--emerald)" />
+      <path d="M14 48 L17.5 55 L21 48 Z" fill="var(--emerald)" />
     </svg>
   )
 }
 
-function RosePetal({ index }: { index: number }) {
-  const colors = ['#C9A84C', '#D4AF37', '#B8860B', '#DAA520']
-  const color = colors[index % colors.length]
-  
+function RosePetal() {
   return (
-    <svg width="14" height="16" viewBox="0 0 14 16">
+    <svg width="10" height="12" viewBox="0 0 14 16">
       <path 
         d="M7 0 Q14 5 12 11 Q9 16 7 16 Q5 16 2 11 Q0 5 7 0" 
-        fill={color}
-        opacity="0.7"
+        fill="var(--emerald)"
+        opacity="0.35"
       />
     </svg>
   )
