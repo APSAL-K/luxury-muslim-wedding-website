@@ -63,9 +63,9 @@ export function CoupleSection() {
                 transition={{ duration: 0.3 }}
               >
                 <img 
-                  src="/images/bride.jpg" 
+                  src="/pride/WhatsApp Image 2026-05-21 at 19.24.00.jpeg" 
                   alt="Anziya - The Bride" 
-                  className="w-full h-full object-cover grayscale"
+                  className="w-full h-50 md:h-70 object-cover "
                 />
               </motion.div>
               {/* Decorative rings */}
@@ -88,7 +88,7 @@ export function CoupleSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              Anziya. A
+              Anziya
             </motion.h3>
             <motion.p 
               className="text-base md:text-lg font-serif text-primary/60 mb-4"
@@ -154,10 +154,11 @@ export function CoupleSection() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="text-center p-4">
-                  <p className="text-secondary/60 font-serif text-sm md:text-base">Groom Photo</p>
-                  <p className="text-secondary/40 font-serif text-xs mt-1">Coming Soon</p>
-                </div>
+                <img 
+                  src="/groom/WhatsApp Image 2026-05-21 at 19.46.56 (1).jpeg" 
+                  alt="Ramees Mohammed - The Groom" 
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
               {/* Decorative rings */}
               <motion.div 
@@ -184,7 +185,7 @@ export function CoupleSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              Ramees Mohammed. A
+              Ramees Mohammed
             </motion.h3>
             <motion.p 
               className="text-lg md:text-xl font-serif text-secondary mb-4"

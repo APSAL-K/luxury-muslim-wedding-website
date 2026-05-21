@@ -1,35 +1,31 @@
-# luxury-muslim-wedding-website
+# Anziya & Ramees Mohammed — Luxury Muslim Wedding Invitation
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+A premium, elegant, and interactive wedding invitation web application custom-designed for the marriage reception of Anziya & Ramees Mohammed.
 
-## Built with v0
+## ✨ Features & Design Aesthetics
+- **Luxury Theme**: High-contrast, elegant HSL color palette tailored with Deep Emerald and Warm Metallic Gold accents.
+- **Beautiful Typography**: Using Google Fonts like Cinzel, Cormorant Garamond, Lato, and Scheherazade New for Arabic script.
+- **Dynamic Interactions**: Rich animations powered by Framer Motion, including floating lanterns, falling rose petals, and interactive cards.
+- **Islamic Monograms**: Handcrafted Rub el Hizb (8-pointed geometric star) emblem enclosing an elegant Serif monogram.
+- **Fully Responsive**: Optimized for beautiful visual rendering across all screen sizes, from mobile screens to desktop browsers.
+- **Opening Modal**: Soft, interactive prologue sequence that unlocks the main digital invitation.
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+## 🚀 Getting Started
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_OVx6hUMP34AcGGDQccAyJ4BuCm8p)
-
-## Getting Started
-
-First, run the development server:
-
+First, install the package dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Next, run the local development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) with your browser to experience the luxury invitation live.
 
-## Learn More
-
-To learn more, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
-
-<a href="https://v0.app/chat/api/kiro/clone/APSAL-K/luxury-muslim-wedding-website" alt="Open in Kiro"><img src="https://pdgvvgmkdvyeydso.public.blob.vercel-storage.com/open%20in%20kiro.svg?sanitize=true" /></a>
+## 🛠️ Tech Stack
+- **Framework**: [Next.js](https://nextjs.org/) (React 19)
+- **Styling**: Tailwind CSS
+- **Animation**: Framer Motion
+- **Fonts**: Google Fonts

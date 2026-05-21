@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { MapPin, Clock, Calendar, ExternalLink, Navigation } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { GeometricBorder } from './islamic-patterns'
 
 export function EventsSection() {
   return (
@@ -52,21 +51,7 @@ export function EventsSection() {
           transition={{ duration: 0.8 }}
           className="group"
         >
-          <div className="relative bg-card border-2 border-secondary/40 rounded-2xl p-8 md:p-12 hover:border-secondary transition-all duration-500 overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-secondary/10">
-            <GeometricBorder className="opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
-            
-            {/* Animated corner accents */}
-            <motion.div 
-              className="absolute top-0 left-0 w-20 h-20 border-l-4 border-t-4 border-secondary/50 rounded-tl-2xl"
-              animate={{ opacity: [0.5, 0.8, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-            <motion.div 
-              className="absolute bottom-0 right-0 w-20 h-20 border-r-4 border-b-4 border-secondary/50 rounded-br-2xl"
-              animate={{ opacity: [0.5, 0.8, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-            />
-            
+          <div className="relative bg-card border border-secondary/25 rounded-2xl p-8 md:p-12 transition-all duration-500 overflow-hidden shadow-lg hover:shadow-xl">
             {/* Card content */}
             <div className="relative z-10">
               {/* Header */}

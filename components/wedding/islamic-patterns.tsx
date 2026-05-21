@@ -217,10 +217,12 @@ export function MughalArch({ children, className = "" }: { children?: React.Reac
 
 export function CrescentMoon({ className = "" }: { className?: string }) {
   return (
-    <svg className={`text-secondary ${className}`} viewBox="0 0 100 100" fill="currentColor">
-      <path d="M50 5C25.2 5 5 25.2 5 50s20.2 45 45 45c8.4 0 16.3-2.3 23-6.3C63.3 83.6 55 72.5 55 60c0-15.5 12.5-28 28-28 5.3 0 10.3 1.5 14.5 4C91.8 19.8 72.8 5 50 5z" />
-      {/* Star */}
-      <path d="M85 25l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" />
+    <svg 
+      className={`text-secondary ${className}`} 
+      viewBox="0 0 24 24" 
+      fill="currentColor"
+    >
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>
   )
 }

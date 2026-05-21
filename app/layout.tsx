@@ -28,26 +28,12 @@ const scheherazade = Scheherazade_New({
 });
 
 export const metadata: Metadata = {
-  title: 'Anziya & Ramees Mohammed | Wedding Invitation',
+  title: 'Anziya & Ramees Mohammed | Luxury Muslim Wedding Invitation',
   description: 'You are cordially invited to the Marriage Reception of Anziya. A & Ramees Mohammed. A on Sunday, July 12th, 2026 at KMR Convention Center, Thenkurussi.',
-  generator: 'v0.app',
   keywords: ['wedding', 'nikah', 'muslim wedding', 'invitation', 'marriage reception', 'Anziya', 'Ramees Mohammed'],
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/icon.svg',
+    apple: '/icon.svg',
   },
 }
 

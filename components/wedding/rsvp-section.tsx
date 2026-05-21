@@ -8,7 +8,6 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import { GeometricBorder } from './islamic-patterns'
 
 export function RSVPSection() {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -59,8 +58,7 @@ export function RSVPSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="relative bg-card border-2 border-secondary/30 rounded-lg p-6 md:p-10 overflow-hidden">
-            <GeometricBorder className="opacity-20" />
+          <div className="relative bg-card border border-secondary/25 rounded-xl p-6 md:p-10 overflow-hidden shadow-lg">
 
             {isSubmitted ? (
               <motion.div

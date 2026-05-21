@@ -6,10 +6,12 @@ import { Navigation } from '@/components/wedding/navigation'
 import { HeroSection } from '@/components/wedding/hero-section'
 import { CoupleSection } from '@/components/wedding/couple-section'
 import { EventsSection } from '@/components/wedding/events-section'
+import { StorySection } from '@/components/wedding/story-section'
 import { RSVPSection } from '@/components/wedding/rsvp-section'
 import { Footer } from '@/components/wedding/footer'
 import { IslamicPatterns } from '@/components/wedding/islamic-patterns'
 import { OpeningModal } from '@/components/wedding/opening-modal'
+import { GallerySection } from '@/components/wedding/gallery-section'
 
 export default function WeddingInvitation() {
   const [isInvitationOpen, setIsInvitationOpen] = useState(false)
@@ -48,6 +50,12 @@ export default function WeddingInvitation() {
             
             {/* Events Section */}
             <EventsSection />
+
+            {/* Story Section */}
+            <StorySection />
+            
+            {/* Gallery Section */}
+            <GallerySection />
             
             {/* RSVP Section */}
             <RSVPSection />
