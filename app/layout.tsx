@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: 'Anziya & Ramees Mohammed',
     images: [
       {
-        url: '/preview-image.png',
+        url: '/preview-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Anziya and Ramees Mohammed wedding invitation preview',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Anziya & Ramees Mohammed',
     description: 'You are cordially invited to the Marriage Reception of Anziya & Ramees Mohammed on Sunday, July 12th, 2026 at KMR Convention Center, Thenkurussi.',
-    images: ['/preview-image.png'],
+    images: ['/preview-image.jpg'],
   },
   icons: {
     icon: '/icon.svg',
