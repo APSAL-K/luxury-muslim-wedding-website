@@ -31,6 +31,27 @@ export const metadata: Metadata = {
   title: 'Anziya & Ramees Mohammed',
   description: 'You are cordially invited to the Marriage Reception of Anziya. A & Ramees Mohammed. A on Sunday, July 12th, 2026 at KMR Convention Center, Thenkurussi.',
   keywords: ['wedding', 'nikah', 'muslim wedding', 'invitation', 'marriage reception', 'Anziya', 'Ramees Mohammed'],
+  openGraph: {
+    title: 'Anziya & Ramees Mohammed',
+    description: 'You are cordially invited to the Marriage Reception of Anziya & Ramees Mohammed on Sunday, July 12th, 2026 at KMR Convention Center, Thenkurussi.',
+    type: 'website',
+    url: '/',
+    siteName: 'Anziya & Ramees Mohammed',
+    images: [
+      {
+        url: '/preview-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Anziya and Ramees Mohammed wedding invitation preview',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Anziya & Ramees Mohammed',
+    description: 'You are cordially invited to the Marriage Reception of Anziya & Ramees Mohammed on Sunday, July 12th, 2026 at KMR Convention Center, Thenkurussi.',
+    images: ['/preview-image.png'],
+  },
   icons: {
     icon: '/icon.svg',
     apple: '/icon.svg',
