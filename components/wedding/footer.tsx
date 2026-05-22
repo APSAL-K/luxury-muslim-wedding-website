@@ -136,16 +136,31 @@ export function Footer() {
           </p>
         </motion.div>
 
-        {/* Copyright */}
-        <motion.p
+        {/* Developer credit */}
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-xs md:text-sm opacity-40"
+          className="flex justify-center"
         >
-          Made with love for our special day
-        </motion.p>
+          <div className="rounded-2xl border border-secondary/25 bg-secondary/10 px-5 py-4 text-center shadow-[0_0_24px_rgba(201,168,76,0.08)] backdrop-blur-sm">
+            <p className="text-[10px] md:text-xs uppercase tracking-[0.35em] text-secondary/70">Developed by</p>
+            <p className="mt-1 text-base md:text-lg font-display text-secondary">Apsal</p>
+            <a
+              href="tel:7550336250"
+              className="mt-1 block text-sm md:text-base font-serif text-primary-foreground/75 transition hover:text-secondary"
+            >
+              7550336250
+            </a>
+            <a
+              href="mailto:apsal.k20044@gmail.com"
+              className="mt-1 block text-xs md:text-sm font-serif text-primary-foreground/60 transition hover:text-secondary"
+            >
+              apsal.k20044@gmail.com
+            </a>
+          </div>
+        </motion.div>
       </div>
     </footer>
   )

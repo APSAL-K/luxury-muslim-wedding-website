@@ -82,7 +82,7 @@ export function Navigation() {
             {/* Action buttons */}
             <div className="flex items-center gap-2">
               {/* Music toggle */}
-              <Button
+              {/* <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsMuted(!isMuted)}
@@ -90,7 +90,7 @@ export function Navigation() {
                 aria-label={isMuted ? 'Unmute' : 'Mute'}
               >
                 {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
-              </Button>
+              </Button> */}
 
               {/* Share button */}
               <Button
