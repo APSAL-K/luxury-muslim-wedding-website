@@ -9,7 +9,7 @@ import { EventsSection } from '@/components/wedding/events-section'
 import { StorySection } from '@/components/wedding/story-section'
 import { RSVPSection } from '@/components/wedding/rsvp-section'
 import { Footer } from '@/components/wedding/footer'
-import { IslamicPatterns } from '@/components/wedding/islamic-patterns'
+import { WeddingSiteBackground } from '@/components/wedding/wedding-site-background'
 import { OpeningModal } from '@/components/wedding/opening-modal'
 import { GallerySection } from '@/components/wedding/gallery-section'
 
@@ -34,9 +34,9 @@ export default function WeddingInvitation() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative overflow-hidden"
           >
-            {/* Floating decorative elements */}
-            <IslamicPatterns />
-            
+            <WeddingSiteBackground />
+
+            <div className="relative z-10">
             {/* Navigation */}
             <Navigation />
             
@@ -62,6 +62,7 @@ export default function WeddingInvitation() {
             
             {/* Footer */}
             <Footer />
+            </div>
           </motion.main>
         )}
       </AnimatePresence>

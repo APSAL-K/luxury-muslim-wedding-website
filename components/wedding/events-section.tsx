@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 
 export function EventsSection() {
   return (
-    <section className="relative py-24 px-4 bg-gradient-to-b from-background to-primary/5 overflow-hidden" id="events">
+    <section className="relative overflow-hidden bg-gradient-to-b from-transparent to-primary/[0.04] px-4 py-24" id="events">
       {/* Animated background pattern */}
       <div className="absolute inset-0 opacity-5">
         <motion.div

@@ -163,7 +163,7 @@ export function GallerySection() {
   }
 
   return (
-    <section id="gallery" className="relative py-24 px-4 bg-gradient-to-b from-background via-emerald/5 to-background arabesque-pattern overflow-hidden">
+    <section id="gallery" className="relative overflow-hidden bg-gradient-to-b from-transparent via-emerald/[0.05] to-transparent px-4 py-24">
       {/* Intricate decorative background lines */}
       <div className="absolute inset-0 pointer-events-none opacity-5 flex items-center justify-center">
         <svg viewBox="0 0 100 100" className="w-[500px] h-[500px] text-secondary">

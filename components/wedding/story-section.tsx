@@ -5,7 +5,7 @@ import { IslamicDivider } from './islamic-patterns'
 
 export function StorySection() {
   return (
-    <section className="relative py-24 px-4 bg-gradient-to-b from-primary/5 to-background overflow-hidden" id="story">
+    <section className="relative overflow-hidden bg-gradient-to-b from-primary/[0.04] to-transparent px-4 py-24" id="story">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

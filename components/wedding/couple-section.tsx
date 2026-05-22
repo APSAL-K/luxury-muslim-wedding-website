@@ -5,7 +5,7 @@ import { IslamicDivider } from './islamic-patterns'
 
 export function CoupleSection() {
   return (
-    <section className="relative py-24 px-4 bg-gradient-to-b from-background via-primary/5 to-background arabesque-pattern overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-b from-transparent via-primary/[0.04] to-transparent px-4 py-24">
       {/* Animated corner decorations */}
       <div className="absolute top-10 left-10 w-32 h-32 opacity-20">
         <motion.div

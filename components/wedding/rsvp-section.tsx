@@ -72,7 +72,7 @@ export function RSVPSection() {
   }
 
   return (
-    <section className="relative py-24 px-4 bg-gradient-to-b from-background to-primary/5 islamic-pattern" id="rsvp">
+    <section className="relative bg-gradient-to-b from-transparent to-primary/[0.05] px-4 py-24" id="rsvp">
       <div className="max-w-2xl mx-auto">
         {/* Section header */}
         <motion.div

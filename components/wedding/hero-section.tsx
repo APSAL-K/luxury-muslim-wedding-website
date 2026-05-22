@@ -8,18 +8,18 @@ export function HeroSection() {
   const weddingDate = new Date('2026-07-12T11:00:00')
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 overflow-hidden islamic-pattern">
-      {/* Animated background gradient */}
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-20">
+      {/* Hero spotlight — works with site-wide wedding theme */}
       <motion.div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-30"
         animate={{
           background: [
-            'radial-gradient(circle at 20% 50%, rgba(201, 168, 76, 0.15) 0%, transparent 50%)',
-            'radial-gradient(circle at 80% 50%, rgba(201, 168, 76, 0.15) 0%, transparent 50%)',
-            'radial-gradient(circle at 20% 50%, rgba(201, 168, 76, 0.15) 0%, transparent 50%)',
-          ]
+            'radial-gradient(circle at 25% 40%, color-mix(in oklch, var(--gold) 22%, transparent) 0%, transparent 45%)',
+            'radial-gradient(circle at 75% 45%, color-mix(in oklch, var(--emerald) 15%, transparent) 0%, transparent 45%)',
+            'radial-gradient(circle at 25% 40%, color-mix(in oklch, var(--gold) 22%, transparent) 0%, transparent 45%)',
+          ],
         }}
-        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
       />
 
       {/* Background mosque silhouette */}
