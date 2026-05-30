@@ -63,9 +63,9 @@ export function CoupleSection() {
                 transition={{ duration: 0.3 }}
               >
                 <img 
-                  src="/pride/WhatsApp Image 2026-05-21 at 19.24.00.jpeg" 
+                  src="/pride/WhatsApp Image 2026-05-21 at 19.43.10.jpeg" 
                   alt="Anziya - The Bride" 
-                  className="w-full h-50 md:h-70 object-cover "
+                  className="w-full h-50 md:h-70 object-cover"
                 />
               </motion.div>
               {/* Decorative rings */}

@@ -32,7 +32,7 @@ export function StorySection() {
           >
             <div className="relative rounded-2xl overflow-hidden border-4 border-primary/20 shadow-2xl">
               <img 
-                src="/cute-couple-with-sunset-silhouette-vector.jpg" 
+                src="/couple/couple-3.jpeg" 
                 alt="Couple" 
                 className="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />

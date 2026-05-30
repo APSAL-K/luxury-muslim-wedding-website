@@ -12,6 +12,7 @@ interface GalleryItem {
   category: 'couple' | 'bride' | 'groom'
   alt: string
   caption: string
+  className?: string
 }
 
 // List of all the groom, bride and couple images in the public folder
@@ -38,93 +39,158 @@ const GALLERY_ITEMS: GalleryItem[] = [
     alt: 'Anziya and Ramees - Grand Celebration',
     caption: 'Surrounded by love, ready for our blessed journey.'
   },
+  {
+    id: 4,
+    src: '/couple/couple-2.jpeg',
+    category: 'couple',
+    alt: 'Anziya and Ramees - Grand Celebration',
+    caption: 'Surrounded by love, ready for our blessed journey.'
+  },
+  {
+    id: 5,
+    src: '/couple/couple-3.jpeg',
+    category: 'couple',
+    alt: 'Anziya and Ramees - Grand Celebration',
+    caption: 'Surrounded by love, ready for our blessed journey.'
+  },
+  {
+    id: 6,
+    src: '/couple/couple-4.jpeg',
+    category: 'couple',
+    alt: 'Anziya and Ramees - Grand Celebration',
+    caption: 'Surrounded by love, ready for our blessed journey.'
+  },
+  {
+    id: 7,
+    src: '/couple/couple-5.jpeg',
+    category: 'couple',
+    alt: 'Anziya and Ramees - Grand Celebration',
+    caption: 'Surrounded by love, ready for our blessed journey.'
+  },
+  {
+    id: 8,
+    src: '/couple/couple-6.jpeg',
+    category: 'couple',
+    alt: 'Anziya and Ramees - Grand Celebration',
+    caption: 'Surrounded by love, ready for our blessed journey.'
+  },
+  {
+    id: 9,
+    src: '/couple/couple-7.jpeg',
+    className:"w-full h-full object-top",
+    category: 'couple',
+    alt: 'Anziya and Ramees - Grand Celebration',
+    caption: 'Surrounded by love, ready for our blessed journey.'
+  },
+  {
+    id: 10,
+    src: '/couple/couple-8.jpeg',
+    category: 'couple',
+    alt: 'Anziya and Ramees - Grand Celebration',
+    caption: 'Surrounded by love, ready for our blessed journey.'
+  },
+  {
+    id: 11,
+    src: '/couple/couple-9.jpeg',
+    category: 'couple',
+    alt: 'Anziya and Ramees - Grand Celebration',
+    caption: 'Surrounded by love, ready for our blessed journey.'
+  },
 
   // Bride Photos (Anziya)
   {
-    id: 4,
+    id: 12,
     src: '/pride/WhatsApp Image 2026-05-21 at 18.42.00.jpeg',
     category: 'bride',
     alt: 'Anziya - The Beautiful Bride',
     caption: 'A sight of grace and stunning bridal elegance.'
   },
   {
-    id: 5,
+    id: 13,
     src: '/pride/WhatsApp Image 2026-05-21 at 18.42.07.jpeg',
     category: 'bride',
     alt: 'Anziya - Bridal Portraits',
     caption: 'Embodying serene beauty and Islamic tradition.'
   },
   {
-    id: 6,
+    id: 14,
     src: '/pride/WhatsApp Image 2026-05-21 at 18.42.11.jpeg',
     category: 'bride',
     alt: 'Anziya - Delicate Details',
     caption: 'Every design, a celebration of this blessed day.'
   },
   {
-    id: 7,
+    id: 15,
     src: '/pride/WhatsApp Image 2026-05-21 at 19.24.00.jpeg',
     category: 'bride',
     alt: 'Anziya - Joyful Bride',
     caption: 'Smiling into a future filled with mercy and love.'
   },
   {
-    id: 8,
+    id: 16,
+    src: '/pride/WhatsApp Image 2026-05-21 at 19.43.10.jpeg',
+    category: 'bride',
+    alt: 'Anziya - Radiance',
+    caption: 'A radiant smile reflecting the blessing of Nikah.'
+  },
+  {
+    id: 17,
     src: '/pride/WhatsApp Image 2026-05-21 at 19.24.07.jpeg',
     category: 'bride',
     alt: 'Anziya - Intricate Dress Details',
     caption: 'Adorned in exquisite, luxury traditional bridal wear.'
   },
   {
-    id: 9,
+    id: 18,
     src: '/pride/WhatsApp Image 2026-05-21 at 19.43.09.jpeg',
     category: 'bride',
     alt: 'Anziya - Posing Gracefully',
     caption: 'Moments of quiet grace before the celebration.'
   },
-  {
-    id: 10,
-    src: '/pride/WhatsApp Image 2026-05-21 at 19.43.10.jpeg',
-    category: 'bride',
-    alt: 'Anziya - Radiance',
-    caption: 'A radiant smile reflecting the blessing of Nikah.'
-  },
+  
 
   // Groom Photos (Ramees)
   {
-    id: 11,
+    id: 19,
     src: '/groom/WhatsApp Image 2026-05-21 at 19.46.56 (1).jpeg',
     category: 'groom',
     alt: 'Ramees Mohammed - The Groom Portrait',
     caption: 'Standing strong, ready for a lifetime of devotion.'
   },
   {
-    id: 12,
+    id: 20,
     src: '/groom/WhatsApp Image 2026-05-21 at 19.24.06 (2).jpeg',
     category: 'groom',
     alt: 'Ramees Mohammed - Sherwani Details',
     caption: 'Dressed in a luxury custom-tailored designer sherwani.'
   },
   {
-    id: 13,
+    id: 21,
     src: '/groom/WhatsApp Image 2026-05-21 at 19.24.06.jpeg',
     category: 'groom',
     alt: 'Ramees Mohammed - The Blessed Groom',
     caption: 'A moment of reflection on this sacred union.'
   },
   {
-    id: 14,
+    id: 22,
     src: '/groom/WhatsApp Image 2026-05-21 at 19.24.06 (1).jpeg',
     category: 'groom',
     alt: 'Ramees Mohammed - Posing Confidently',
     caption: 'Joy and gratitude on the most special day.'
   },
   {
-    id: 15,
+    id: 23,
     src: '/groom/WhatsApp Image 2026-05-21 at 19.46.59.jpeg',
     category: 'groom',
     alt: 'Ramees Mohammed - Celebratory Moments',
     caption: 'Elegance, charm, and celebration in Pallanchathanur.'
+  },
+  {    
+    id: 24,
+    src: '/groom/ramees-eid.jpg',
+    category: 'groom',
+    alt: 'Ramees Mohammed - Eid-Ul-Adha Celebration',
+    caption: 'A joyful moment of celebration and gratitude during Eid.'
   }
 ]
 
@@ -245,7 +311,7 @@ export function GallerySection() {
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className={item.className || "w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"}
                   loading="lazy"
                 />
 
