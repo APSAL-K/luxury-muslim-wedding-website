@@ -63,7 +63,7 @@ export function CoupleSection() {
                 transition={{ duration: 0.3 }}
               >
                 <img 
-                  src="/pride/WhatsApp Image 2026-05-21 at 19.43.10.jpeg" 
+                  src="/pride/IMG-20250525-WA0106.jpg" 
                   alt="Anziya - The Bride" 
                   className="w-full h-50 md:h-70 object-cover"
                 />
@@ -179,7 +179,7 @@ export function CoupleSection() {
             </div>
             
             <motion.h3 
-              className="text-3xl md:text-4xl lg:text-5xl font-display gold-shimmer mb-3"
+              className="text-2xl md:text-3xl lg:text-4xl font-display text-primary mb-2"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -188,7 +188,7 @@ export function CoupleSection() {
               Ramees Mohammed
             </motion.h3>
             <motion.p 
-              className="text-lg md:text-xl font-serif text-secondary mb-4"
+              className="text-base md:text-lg font-serif text-primary/60 mb-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}

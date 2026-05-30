@@ -142,6 +142,13 @@ const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 18,
+    src: '/pride/IMG-20250525-WA0106.jpg',
+    category: 'bride',
+    alt: 'Anziya - Posing Gracefully',
+    caption: 'Moments of quiet grace before the celebration.'
+  },
+  {
+    id: 19,
     src: '/pride/WhatsApp Image 2026-05-21 at 19.43.09.jpeg',
     category: 'bride',
     alt: 'Anziya - Posing Gracefully',
@@ -151,42 +158,42 @@ const GALLERY_ITEMS: GalleryItem[] = [
 
   // Groom Photos (Ramees)
   {
-    id: 19,
+    id: 20,
     src: '/groom/WhatsApp Image 2026-05-21 at 19.46.56 (1).jpeg',
     category: 'groom',
     alt: 'Ramees Mohammed - The Groom Portrait',
     caption: 'Standing strong, ready for a lifetime of devotion.'
   },
   {
-    id: 20,
+    id: 21,
     src: '/groom/WhatsApp Image 2026-05-21 at 19.24.06 (2).jpeg',
     category: 'groom',
     alt: 'Ramees Mohammed - Sherwani Details',
     caption: 'Dressed in a luxury custom-tailored designer sherwani.'
   },
   {
-    id: 21,
+    id: 22,
     src: '/groom/WhatsApp Image 2026-05-21 at 19.24.06.jpeg',
     category: 'groom',
     alt: 'Ramees Mohammed - The Blessed Groom',
     caption: 'A moment of reflection on this sacred union.'
   },
   {
-    id: 22,
+    id: 23,
     src: '/groom/WhatsApp Image 2026-05-21 at 19.24.06 (1).jpeg',
     category: 'groom',
     alt: 'Ramees Mohammed - Posing Confidently',
     caption: 'Joy and gratitude on the most special day.'
   },
   {
-    id: 23,
+    id: 24,
     src: '/groom/WhatsApp Image 2026-05-21 at 19.46.59.jpeg',
     category: 'groom',
     alt: 'Ramees Mohammed - Celebratory Moments',
     caption: 'Elegance, charm, and celebration in Pallanchathanur.'
   },
   {    
-    id: 24,
+    id: 25,
     src: '/groom/ramees-eid.jpg',
     category: 'groom',
     alt: 'Ramees Mohammed - Eid-Ul-Adha Celebration',
