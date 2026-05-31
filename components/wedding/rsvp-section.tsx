@@ -19,7 +19,7 @@ const EMAILJS_CONFIG = {
 export function RSVPSection() {
   const [submissionState, setSubmissionState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
-  const contactEmail = 'apsal.k20044@gmail.com'
+  const contactEmail = 'apsal.k2004@gmail.com'
   const [formData, setFormData] = useState({
     name: '',
     email: '',

@@ -154,10 +154,10 @@ export function Footer() {
               7550336250
             </a>
             <a
-              href="mailto:apsal.k20044@gmail.com"
+              href="mailto:apsal.k2004@gmail.com"
               className="mt-1 block text-xs md:text-sm font-serif text-primary-foreground/60 transition hover:text-secondary"
             >
-              apsal.k20044@gmail.com
+              apsal.k2004@gmail.com
             </a>
           </div>
         </motion.div>
