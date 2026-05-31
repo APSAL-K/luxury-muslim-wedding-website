@@ -207,6 +207,11 @@ export function CoupleSection() {
               <p className="text-sm md:text-base font-serif text-primary/70">Son of</p>
               <p className="text-lg md:text-xl font-serif text-primary font-medium">Mr. Aneefa. A & Mrs. Saleena. J</p>
               <p className="text-sm text-primary/60">Thekkinkad House, Pallanchathanur, Palakkad</p>
+              <div className="pt-3 border-t border-primary/10 mt-3">
+                <p className="text-xs font-serif text-primary/50 italic">Grand S/o</p>
+                <p className="text-xs md:text-sm font-serif text-primary/70">Late. Alu & Mrs. Amina</p>
+                <p className="text-xs md:text-sm font-serif text-primary/70">and Jamal Mohammed & Mrs. Salma</p>
+              </div>
             </motion.div>
           </motion.div>
         </div>

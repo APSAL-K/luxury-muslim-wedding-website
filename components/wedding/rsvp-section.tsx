@@ -50,7 +50,7 @@ export function RSVPSection() {
       phone: formData.phone,
       project_size: formData.guests,
       requirement_type: attendanceLabel,
-      message: formData.message || 'No additional message',
+      message_html: formData.message || 'No additional message',
     }
 
     try {
